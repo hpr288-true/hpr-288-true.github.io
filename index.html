@@ -2,10 +2,10 @@
   <p id="text">amiboを読み取ります</p>
   <button onclick="nfc()">amiboを読み取る</button>
   <script>
-    const ndefReader = new NDEFReader();
     function nfc()
     {
-     ndef.scan().then((nfcEvent) => {
+    const ndefReader = new NDEFReader();
+    ndef.scan().then((nfcEvent) => {
     // NFCタグが読み取れた場合の処理
     const ndefMessage = nfcEvent.message;
     window.alert(ndefMessage);
