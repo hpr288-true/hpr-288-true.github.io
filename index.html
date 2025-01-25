@@ -6,16 +6,6 @@
     {
       const reader = new NDEFReader();
       reader.scan()
-  .then(() => {
-    reader.onreading = (event) => {
-      const message = event.message;
-      // ここで、messageのデータを解析する
-      console.log(message);
-    };
-  })
-  .catch(error => {
-    console.error('NFC読み取りエラー:', error);
-  });
-    }
+      window.alert("読み取りました")
   </script>
 </html>
