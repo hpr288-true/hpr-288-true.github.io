@@ -6,7 +6,7 @@
     {
       const ndefReader = new NDEFReader();
       ndefReader.scan()
-      ndef.onreading = (event) => {
+      ndefReader.onreading = (event) => {
       const reader = event.target;
       const records = event.target.read();
       records.forEach(record => {
