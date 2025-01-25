@@ -9,7 +9,7 @@
   (nfcEvent) => {
     // NFCタグが読み取れた場合の処理
     const ndefMessage = nfcEvent.message;
-    console.log(ndefMessage);
+    window.alert(ndefMessage);
   },
   (error) => {
     // エラーが発生した場合の処理
