@@ -5,7 +5,7 @@
     function nfc()
     {
     const ndefReader = new NDEFReader();
-    ndef.scan().then((nfcEvent) => {
+    ndefReader.scan().then((nfcEvent) => {
     // NFCタグが読み取れた場合の処理
     const ndefMessage = nfcEvent.message;
     window.alert(ndefMessage);
