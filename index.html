@@ -5,7 +5,9 @@
     function nfc()
     {
       const ndefReader = new NDEFReader();
-      ndefReader.scan()
+      ndefReader.scan().then((ndefevent)=>{
+        window.alert(ndefevent)
+      })
     }
   </script>
 </html>
