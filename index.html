@@ -2,9 +2,9 @@
   <p id="text">amiboを読み取ります</p>
   <button onclick="nfc()">amiboを読み取る</button>
   <script>
+    const reader = new NDEFReader();
     function nfc()
     {
-      const reader = new NDEFReader();
       reader.scan()
       window.alert("読み取りました")
   </script>
