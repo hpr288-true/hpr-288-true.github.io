@@ -2,20 +2,20 @@
   <p id="text">amiboを読み取ります</p>
   <button onclick="nfc()">amiboを読み取る</button>
   <script>
+    const reader = new NDEFReader();
     function nfc()
     {
-      const ndefReader = new NDEFReader();
-      ndefReader.scan()
-      ndefReader.onreading = (event) => {
-      const reader = event.target;
-      const records = event.target.read();
-      records.forEach(record => {
-      // 読み取ったデータの処理
-      console.log(record);
-      });
-      reader.close();
-      };
-      })
+      reader.scan()
+  .then(() => {
+    reader.onreading = (event) => {
+      const message = event.message;
+      // ここで、messageのデータを解析する
+      console.log(message);
+    };
+  })
+  .catch(error => {
+    console.error('NFC読み取りエラー:', error);
+  });
     }
   </script>
 </html>
