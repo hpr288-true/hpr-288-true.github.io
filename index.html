@@ -5,8 +5,16 @@
     function nfc()
     {
       const ndefReader = new NDEFReader();
-      ndefReader.scan().then((ndefevent)=>{
-        window.alert(ndefevent)
+      ndefReader.scan()
+      ndef.onreading = (event) => {
+      const reader = event.target;
+      const records = event.target.read();
+      records.forEach(record => {
+      // 読み取ったデータの処理
+      console.log(record);
+      });
+      reader.close();
+      };
       })
     }
   </script>
