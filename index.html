@@ -5,14 +5,17 @@
     const ndefReader = new NDEFReader();
     function nfc()
     {
-      ndefReader.scan().then(
-  () => {
-    window.alert('NFCタグが検出されました');
+     ndef.scan().then(
+  (nfcEvent) => {
+    // NFCタグが読み取れた場合の処理
+    const ndefMessage = nfcEvent.message;
+    console.log(ndefMessage);
   },
   (error) => {
-    console.error('エラーが発生しました:', error);
+    // エラーが発生した場合の処理
+    console.error('Error reading NFC tag', error);
   }
-);
+); 
     }
   </script>
 </html>
