@@ -1,7 +1,11 @@
 <html>
   <p id="text">amiboを読み取ります</p>
-  <button>amiboを読み取る</button>
+  <button onclick="nfc()">amiboを読み取る</button>
   <script>
     const ndefReader = new NDEFReader();
+    function nfc()
+    {
+      window.alert("なんでやねん")
+    }
   </script>
 </html>
