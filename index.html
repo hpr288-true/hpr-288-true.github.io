@@ -7,7 +7,7 @@
     {
       ndefReader.scan().then(
   () => {
-    console.log('NFCタグが検出されました');
+    window.alert('NFCタグが検出されました');
   },
   (error) => {
     console.error('エラーが発生しました:', error);
